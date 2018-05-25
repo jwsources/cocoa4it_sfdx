@@ -1,0 +1,30 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global">
+
+	<aura:attribute name="iconName" type="string" />
+
+	<aura:attribute name="predictions" type="Object[]" />
+	<aura:attribute name="rawPredictions" type="String" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:layout class="slds-m-around_small">
+        <lightning:layoutitem size="6" padding="around-small">
+            <lightning:tabset >
+                <lightning:tab label="Formatted">
+                    <!--<aura:iteration items="{!v.predictions}" var="prediction">
+                        <lightning:layout class="result-grid">
+                            <lightning:layoutitem size="1" padding="around-small">
+                                <lightning:icon iconName="{!v.iconName}" size="x-small" /></lightning:layoutitem>
+                            <lightning:layoutitem size="1" padding="around-small">{! prediction.formattedProbability}</lightning:layoutitem>
+                            <lightning:layoutitem padding="around-small" flexibility="grow">{!prediction.label}</lightning:layoutitem>
+                        </lightning:layout>
+                    </aura:iteration>-->
+                </lightning:tab>
+                <lightning:tab label="Raw">
+                    <pre>{!v.rawPredictions}</pre>
+                </lightning:tab>
+            </lightning:tabset>
+        </lightning:layoutitem>
+    </lightning:layout>
+
+</aura:component>

@@ -1,0 +1,3 @@
+<design:component >
+	<design:attribute name="CategoryFilter" label="Category Filter" default="Not categorized" datasource="Not categorized,Trail advice,Trail assistance,Image recognition" />
+</design:component>
